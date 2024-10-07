@@ -1,0 +1,60 @@
+
+<h1><b> PROVEEDOR </b> </h1>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+    <div class="row">
+
+        <mat-form-field appearance="fill" class="col-12">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre" placeholder="Ingresa el nombre">
+            <mat-error *ngIf="myForm.get('nombre')?.hasError('required')">El nombre es obligatorio</mat-error>
+          </mat-form-field>
+       
+    </div>
+
+    <div class="row">
+    <mat-form-field appearance="fill">
+      <mat-label>Dirección</mat-label>
+      <input matInput formControlName="direccion" placeholder="Ingresa la dirección">
+      <mat-error *ngIf="myForm.get('direccion')?.hasError('required')">La dirección es obligatoria</mat-error>
+    </mat-form-field>
+    </div>
+
+    <div class="row">
+    <mat-form-field appearance="fill">
+      <mat-label>telefono</mat-label>
+      <input matInput  formControlName="telefono" placeholder="Ingresa el teléfono">
+      <mat-error *ngIf="myForm.get('telefono')?.hasError('required')">El precio es obligatorio</mat-error>
+    </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput  formControlName="email" placeholder="Ingresa el email">
+          <mat-error *ngIf="myForm.get('email')?.hasError('required')">El Email es obligatorio</mat-error>
+        </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="fill">
+              <mat-label>Ruc</mat-label>
+              <input matInput  formControlName="ruc" placeholder="Ingresa el teléfono">
+              <mat-error *ngIf="myForm.get('ruc')?.hasError('required')">El RUC es obligatorio</mat-error>
+            </mat-form-field>
+            </div>
+
+
+            <div class="row">
+                <mat-form-field appearance="fill">
+                  <mat-label>Clave</mat-label>
+                  <input matInput  type="password" formControlName="clave" placeholder="Ingresa la clave">
+                  <mat-error *ngIf="myForm.get('clave')?.hasError('required')">La clave es obligatoria</mat-error>
+                </mat-form-field>
+                </div>
+
+  
+   
+    <button mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Actualizar</button>
+</div>
+  </form>

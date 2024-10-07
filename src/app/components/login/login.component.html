@@ -1,0 +1,27 @@
+<div class="login-container">
+    <mat-card>
+      <h1>Login</h1>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+        <div class="col-12">
+        <mat-form-field>
+          <mat-label>Usuario</mat-label>
+          <input matInput formControlName="username" placeholder="Usuario">
+        </mat-form-field>
+        </div>
+
+        <div class="col-12">
+        <mat-form-field>
+          <mat-label>Contraseña</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" placeholder="Contraseña">
+          <button type="button" mat-icon-button matSuffix (click)="hide = !hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+    </div>
+    </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Iniciar sesión</button>
+      </form>
+      <mat-error *ngIf="loginError">{{loginError}}</mat-error>
+    </mat-card>
+  </div>
